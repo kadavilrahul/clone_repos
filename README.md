@@ -4,8 +4,9 @@ A comprehensive collection of bash scripts for analyzing, comparing, and managin
 
 ## 🚀 Quick Start
 
-```bash
 # Clone the repository
+
+```bash
 git clone https://github.com/kadavilrahul/clone_repos.git
 ```
 ```bash
