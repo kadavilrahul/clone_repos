@@ -1,7 +1,7 @@
 {
   "github": {
-    "username": "kadavilrahul",
-    "token": "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"
+    "username": "github_username",
+    "token": "XXXXXXXXXXXXXXXXX"
   },
   "clone": {
     "default_path": "./repos"
