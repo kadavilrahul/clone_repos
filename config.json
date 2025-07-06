@@ -1,0 +1,17 @@
+{
+  "github": {
+    "username": "kadavilrahul",
+    "token": "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"
+  },
+  "clone": {
+    "default_path": "./repos"
+  },
+  "favorites": [],
+  "recent": [],
+  "filters": {
+    "show_private": true,
+    "show_public": true,
+    "languages": [],
+    "exclude_forks": false
+  }
+}
