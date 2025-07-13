@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /root/projects/file-versioning-inotify/Repositories/useful_commands log --oneline -1 cli_tools_curated.md)",
+      "Bash(git -C /root/projects/file-versioning-inotify/Repositories/useful_commands show 3676195:cli_tools_curated.md)",
+      "Bash(git -C /root/projects/file-versioning-inotify/Repositories/useful_commands diff 3676195 HEAD -- cli_tools_curated.md)"
+    ],
+    "deny": []
+  }
+}
