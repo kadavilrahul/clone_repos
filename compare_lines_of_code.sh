@@ -42,18 +42,61 @@ echo ""
 # Counter for codebase number
 counter=1
 
+# First, automatically analyze current directory
+echo "Analyzing current directory by default..."
+echo ""
+
+# Analyze current directory first
+current_dir="$(pwd)"
+current_name=$(basename "$current_dir")
+
+echo "Codebase #$counter (Current Directory)"
+echo "-------------------------------------"
+echo "Analyzing: $current_dir"
+
+# Count files and lines in current directory
+file_count=$(find "$current_dir" -type f -readable 2>/dev/null | wc -l)
+
+if [[ "$file_count" == "0" ]]; then
+    echo "Warning: No readable files found in current directory"
+    line_count="0"
+else
+    line_count=$(find "$current_dir" -type f -readable -exec wc -l {} + 2>/dev/null | tail -n 1 | awk '{print $1}')
+    
+    if [[ -z "$line_count" ]] || ! [[ "$line_count" =~ ^[0-9]+$ ]]; then
+        echo "Warning: Unable to count lines properly in current directory"
+        line_count="0"
+    fi
+fi
+
+# Format and display result for current directory
+result="$current_name: $line_count lines ($file_count files) - Path: $current_dir"
+echo "SUCCESS: $result"
+
+# Save to file
+echo "$result" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+echo ""
+echo "Current directory analysis complete!"
+echo ""
+
+# Increment counter for additional directories
+((counter++))
+
 while true; do
-    echo "Codebase #$counter"
-    echo "-------------"
+    echo "Codebase #$counter (Additional Directory)"
+    echo "----------------------------------------"
     
     # Get folder path from user
-    read -p "Enter the path to codebase folder (or 'quit' to finish): " folder_path
+    read -p "Enter the path to additional codebase folder (or 'q' to finish): " folder_path
     
     # Trim whitespace
     folder_path=$(echo "$folder_path" | xargs)
     
     # Check if user wants to quit
-    if [[ "$folder_path" == "quit" || "$folder_path" == "q" || -z "$folder_path" ]]; then
+    if [[ "$folder_path" == "q" || "$folder_path" == "quit" || -z "$folder_path" ]]; then
+        echo "No additional directories to analyze."
         break
     fi
     

@@ -1,10 +1,10 @@
 {
   "github": {
-    "username": "github_username",
-    "token": "XXXXXXXXXXXXXXXXX"
+    "username": "your_github_username",
+    "token": "your_personal_access_token_here"
   },
   "clone": {
-    "default_path": "./repos"
+    "default_path": "."
   },
   "favorites": [],
   "recent": [],
