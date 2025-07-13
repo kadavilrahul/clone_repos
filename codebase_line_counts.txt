@@ -1,8 +1,0 @@
-Codebase Line Count Comparison
-Generated on: Sun Jul 13 07:37:35 PM IST 2025
-======================================
-
-clone_repos: 4197 lines (53 files) - Path: /root/clone_repos
-
-backups: 22 lines (5 files) - Path: /root/projects/Repositories/backups
-
